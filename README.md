@@ -3,18 +3,39 @@ SpaceJS is a namespacing utility for JavaScript
 
 ##Usage
 ###Create a namespace
-Here is how to create and access a namespace.  Let's call this one "utils".
+Here is how to create and access a namespace.  Pass a string representation of the namespace you wish to create / access.
 ```js
-space('utils'); // creates the object 'utils' on the global 'window' objecct
+space('utils'); // creates the namespace object 'utils'
+utils; // Object {}
 
-window.utils; // Object {}
+space('app.ui.widgets'); // create a deeper level namespace
+app.ui.widgets; // Object {}
+
+space('app.ui.effects.3d.particle'); // here is a special case
+app.ui.effects['3d'].particle; // Object {}
+```
+###Non-destructive Namespacing
+Use SpaceJS without worrying about clobbering existing objects.
+```js
+space('utils.math');
+space('utils.iteration');
+utils.math; // Object {} -> The 'utils' object was untouched by the second call, leaving utils.math intact
 ```
 
+###Use a namespace right away
+SpaceJS immediately returns the referenced namespace, allowing you to assign a property to it.
+```js
+space('utils.arrays').getLastItem = function (arr) {
+  return arr[arr.length-1];
+};
+
+utils.arrays.getLastItem([10,20,30]); // returns 30
+```
 ###Extend a namespace
-Now that we have created the 'utils' namespace on 'window' there are three ways to extend it.  The following examples are equivilent.
+There are three ways to namespace an object.  The following examples are equivilent.
 ```js
 space('utils.filters');
-space(window.utils, 'filters');
+space(window.utils, 'filters'); // assuming 'window' is set as the global namespace object (see below)
 space(utils, 'filters');
 ```
 > NOTE: In the first example above, we specify only one parameter, the namespace to create/access. This will extend the default global namespace object, which is 'window'.  In the second and third examples, we are specifying which object to namespace, which in these examples is 'utils'.
@@ -52,24 +73,6 @@ utils.utils.geometry; // Object {} -> oh.
 space('geometry');
 utils.geometry; // Object {} -> that's better
 ```
-###Non-destructive Namespacing
-Use SpaceJS without worrying about clobbering existing objects.
-```js
-space('utils.math');
-space('utils.iteration');
-utils.math; // Object {} -> The 'utils' object was untouched by the second call, leaving utils.math intact
-```
-
-###Use a namespace right away
-SpaceJS immediately returns the referenced namespace, allowing you to assign a property to it.
-```js
-space('utils.arrays').getLastItem = function (arr) {
-  return arr[arr.length-1];
-};
-
-utils.arrays.getLastItem([10,20,30]); // returns 30
-```
-
 ###Modules
 Easily create modules for your application.
 ```js
