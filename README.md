@@ -120,6 +120,10 @@ square.getArea(); // 400
 ###Errors
 If you attempt to extend an object of a type which cannot be extended, such as a number, SpaceJS will throw a TypeError.
 ```js
+
+var person = "Bob";
+space('person').age = 33; // TypeError: Cannot extend `person`: `person` is a string
+
 space('utils').version = 2.1; // this works fine
 space('utils.version').details = { v: 2.2, date: '2014-08-12' }; // TypeError: Cannot extend `version` of `utils.version`: `version` is a number
 ```
