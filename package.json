@@ -1,0 +1,16 @@
+{
+	"name": "space",
+	"version": "0.0.1",
+	"description": "SpaceJS namespacing utility",
+	"license": "",
+	"author": "Jason Pecor",
+	"repository": {},
+	"devDependencies": {
+		"gulp": "~3.8.0",
+		"gulp-jshint": "^1.5.3",
+		"gulp-concat": "^2.2.0",
+		"gulp-uglify": "^0.2.1",
+		"gulp-less": "^1.2.3"
+	},
+	"dependencies": {}
+}
