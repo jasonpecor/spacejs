@@ -4,7 +4,10 @@
 	"description": "SpaceJS namespacing utility",
 	"license": "",
 	"author": "Jason Pecor",
-	"repository": {},
+	"repository": {
+		type: "git",
+		url: "git://github.com/jasonpecor/spacejs.git"
+	},
 	"devDependencies": {
 		"gulp": "~3.8.0",
 		"gulp-jshint": "^1.5.3",
