@@ -7,7 +7,12 @@
 ;var space = ( function ( global, undefined ) {
 	"use strict";
 	
-	return function(arg1, arg2) {
+	function setGlobal(g) {
+		if (g) global = g;
+		else return global;
+	}
+	
+	function space(arg1, arg2) {
 		
 		var ns, root, last;
 		
@@ -30,5 +35,9 @@
 		
 		return last;
 	}
+	
+	space.global = setGlobal;
+	
+	return space;
 	
 } )( window );
