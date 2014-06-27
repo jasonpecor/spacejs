@@ -17,6 +17,18 @@ space('utils.filters');
 space(window.utils, 'filters');
 space(utils, 'filters');
 ```
+> NOTE: In the first example above, we specify only one parameter, the namespace to create/access. This will extend the default global object, which is 'window'.  In the second and third examples, we are specifying which object to extend, which in these examples is 'utils' on the global 'window' object.
+
+**The Global Object**
+By default, the global object for SpaceJS is set to 'window.'  To change this, call *scope.global()*, passing in a new global object.
+```js
+var myCustomGlobal = {};
+
+space.global(myCustomGlobal); // replace default global namespace object
+
+space('dist').version = 2.1;
+myCustomGlobal.dist.version; // 2.1
+```
 
 **Non-destructive**
 Use SpaceJS without worrying about clobbering existing objects.
@@ -34,6 +46,13 @@ space('utils.arrays').getLastItem = function (arr) {
 };
 
 utils.arrays.getLastItem([10,20,30]); // returns 30
+```
+
+**TypeErrors using SpaceJS**
+If you attempt to extend an object of a type which cannot be extended, such as a number, SpaceJS will throw a TypeError.
+```js
+space('utils').version = 2.1; // this works file
+space('utils.version').details = { v: 2.2, date: '2014-08-12' }; // TypeError: Cannot extend `version` of `utils.version`: `version` is a number
 ```
 
 
