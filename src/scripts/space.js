@@ -24,9 +24,14 @@
 			return root;
 		
 		ns.split('.').forEach( function (key) {
-			if (last[key] === undefined)
-				last[key] = {};
-			else if (typeof last[key] !== 'object')
+			if (last[key] === undefined) {
+				var working = {};
+				last[key] = working;
+				
+				if (last[key] !== working)
+					throw new TypeError('Cannot extend `' + key + (last !== root ? '` of `' + ns : '') + '`: `' + key + '` may be readonly');
+			
+			} else if (typeof last[key] !== 'object' && typeof last[key] !== 'function')
 				throw new TypeError('Cannot extend `' + key + (last !== root ? '` of `' + ns : '') + '`: `' + key + '` is a ' + typeof last[key]);
 			else if (last[key] === null)
 				throw new TypeError('Cannot extend `' + key + (last !== root ? '` of `' + ns : '') + '`: `' + key + '` is null');

@@ -5,8 +5,8 @@
 	"license": "",
 	"author": "Jason Pecor",
 	"repository": {
-		type: "git",
-		url: "git://github.com/jasonpecor/spacejs.git"
+		"type": "git",
+		"url": "git://github.com/jasonpecor/spacejs.git"
 	},
 	"devDependencies": {
 		"gulp": "~3.8.0",
