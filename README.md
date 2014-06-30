@@ -1,6 +1,7 @@
 #spacejs
 SpaceJS is a namespacing utility for JavaScript
-
+##Try it
+You can try out SpaceJS here: http://codepen.io/jasonpecor/pen/vnsog
 ##Usage
 ###Create a namespace
 Here is how to create and access a namespace.  Pass a string representation of the namespace you wish to create / access.
