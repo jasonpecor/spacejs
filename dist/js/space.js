@@ -45,4 +45,6 @@
 	
 	return space;
 	
-} )( window );
+} )( typeof window === 'undefined' ? ( typeof global === 'undefined' ? {} : global ) : window );
+
+if (module) module.exports = space;

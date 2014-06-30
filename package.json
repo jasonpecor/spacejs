@@ -1,12 +1,16 @@
 {
 	"name": "space",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "SpaceJS namespacing utility",
-	"license": "",
+	"license": "MIT",
 	"author": "Jason Pecor",
+	"main": "dist/js/space.js",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/jasonpecor/spacejs.git"
+	},
+	"bugs": {
+		"url": "http://github.com/jasonpecor/space"
 	},
 	"devDependencies": {
 		"gulp": "~3.8.0",
