@@ -41,7 +41,7 @@ space(utils, 'filters');
 > NOTE: In the first example above, we specify only one parameter, the namespace to create/access. This will extend the default global namespace object, which is 'window'.  In the second and third examples, we are specifying which object to namespace, which in these examples is 'utils'.
 
 ###The Global Namespace Object
-By default, the global namespace object for SpaceJS is 'window.'  To change this, call *scope.global()*, passing in a new global object.
+In the browser, the default global namespace object for SpaceJS is 'window.'  In NodeJS, the default global namespace object is 'global.'  If neither 'window' nor 'global' are defined, an empty object will be used as the default.  You should not need to do this, but you can change the default global namespace object by calling *scope.global()*, passing in a new global namespace object (example below).
 ```js
 var myCustomGlobal = {};
 
@@ -52,7 +52,7 @@ myCustomGlobal.dist.version; // 2.1
 ```
 To get the current global namespace object, you can do one of the following.
 ```js
-space.global(); // returns 'window' or whatever you've set as global
+space.global(); // returns 'window', 'global' or whatever you've set as global
 space(); // does the same thing
 ```
 To set a value on the global namespace object, do one of the following.
@@ -72,6 +72,14 @@ utils.utils.geometry; // Object {} -> oh.
 
 space('geometry');
 utils.geometry; // Object {} -> that's better
+```
+###RequireJS
+As of version 0.0.2, you can use SpaceJS with RequireJS.
+```js
+var space = require('./dist/js/space.js');
+
+space('app.controller');
+app.controller; // Object {}
 ```
 ###Modules
 Easily create modules for your application.
