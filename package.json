@@ -10,7 +10,7 @@
 		"url": "git://github.com/jasonpecor/spacejs.git"
 	},
 	"bugs": {
-		"url": "http://github.com/jasonpecor/space"
+		"url": "http://github.com/jasonpecor/spacejs"
 	},
 	"devDependencies": {
 		"gulp": "~3.8.0",
