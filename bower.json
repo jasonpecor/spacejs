@@ -1,0 +1,31 @@
+{
+  "name": "space",
+  "version": "0.0.2-beta",
+  "homepage": "https://github.com/jasonpecor/spacejs",
+  "authors": [
+    "jasonpecor <jason@jasonpecor.com>"
+  ],
+  "description": "SpaceJS is a namespacing utility for JavaScript",
+  "main": "dist/js/space.js",
+  "keywords": [
+    "namespace",
+    "namespacing",
+    "modules"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+	"src",
+	"bower.json",
+	"package.json",
+	"LICENSE",
+	"README.md",
+	"test.js",
+	"gulpfile.js",
+	"example.html"
+  ]
+}
