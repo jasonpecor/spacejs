@@ -1,7 +1,7 @@
 /**
  * SpaceJS
  * Created by Jason Pecor
- * v 0.0.2
+ * v 0.0.3
  */
 
 ;var space = ( function ( global, undefined ) {
@@ -47,4 +47,4 @@
 	
 } )( typeof window === 'undefined' ? ( typeof global === 'undefined' ? {} : global ) : window );
 
-if (module) module.exports = space; // make compatible with requirejs / npm
+if (typeof module !== 'undefined') module.exports = space; // make compatible with requirejs / npm
