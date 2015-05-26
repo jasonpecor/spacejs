@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NamespaceJS Example</title>
+</head>
+
+<body>
+
+<h1>NamespaceJS</h1>
+
+<p>Example</p>
+<p>View the source...</p>
+
+<script src="dist/js/space.js"></script>
+
+<script>
+
+space('myApp.myModule').someFunction = function () {
+	return "It worked!";
+};
+
+console.log( myApp.myModule.someFunction() );
+
+</script>
+
+</body>
+</html>
