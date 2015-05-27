@@ -21,6 +21,8 @@ gulp.task('compile-scripts', function () {
 gulp.task('dist', function () {
 	return gulp.src( paths.scripts )
 		.pipe(jshint())
+		.pipe(concat( pkg.name + '.js' ))
+		.pipe(gulp.dest( paths.dist.scripts ))
 		.pipe(concat( pkg.name + '.min.js' ))
 		.pipe(uglify())
 		.pipe(gulp.dest( paths.dist.scripts ));
