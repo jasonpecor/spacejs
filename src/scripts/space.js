@@ -1,7 +1,7 @@
 /**
  * SpaceJS
  * Created by Jason Pecor
- * v 0.0.3
+ * v 0.0.5
  */
 
 ;var space = ( function ( global, undefined ) {
